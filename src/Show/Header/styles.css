@@ -1,0 +1,79 @@
+/* Header.js */
+
+.header-container {
+  display: flex;
+  position: relative;
+  max-height: 4rem;
+  width: 100%;
+  margin-right: 2rem;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+.header-left-block h1 {
+  font-size: 6.4rem;
+  padding-bottom: 1.4rem;
+  margin: 0;
+}
+
+.header-left-block .button-save {
+  height: 7.5rem;
+  width: 7.5rem;
+  font-size: 1.8rem;
+  border-width: 0;
+  border-radius: 50%;
+  color: #fff;
+  background-color: #e3e3e3;
+  font-family: AvenirNext-Bold;
+  outline: none;
+}
+
+.header-right-block {
+  flex-direction: column;
+  margin-top: 1.6rem;
+}
+
+.header-right-block h2 {
+  font-size: 8rem;
+  color: #e2e2e2;
+  font-weight: 400;
+  margin: 0;
+  text-align: right;
+}
+
+.header-right-block-labels button {
+  border-width: 0;
+  border-radius: 50%;
+  background-color: #0e0e0e;
+  width: 1.8rem;
+  height: 1.8rem;
+  margin-left: 1.3rem;
+  margin-bottom: 2rem;
+  outline: none;
+}
+
+.header-right-block-labels .label-dark-gray {
+  background-color: #c5c5c5;
+}
+
+.header-right-block-labels .label-blue {
+  background-color: #4d87ca;
+}
+
+.header-right-block-labels .label-black {
+  background-color: #0e0e0e;
+}
+
+.header-right-block-labels .label-gray {
+  background-color: #e0e0e0;
+}
+
+.header-right-block-labels .label-sale-wrapper {
+  visibility: visible;
+  display: inline;
+  position: relative;
+  margin: 0;
+  top: 0;
+  right: 0;
+  margin-left: 3.7rem;
+}

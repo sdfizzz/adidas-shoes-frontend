@@ -1,0 +1,15 @@
+.thumbnail-item-separator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 12rem;
+  height: 3rem;
+  margin: auto 0;
+  padding: 0 1.6rem;
+}
+
+.thumbnail-separator-part {
+  width: 100%;
+  height: .3rem;
+  background-color: #d8d8d8;
+}

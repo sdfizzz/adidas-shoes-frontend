@@ -1,0 +1,28 @@
+@font-face {
+  font-family: AvenirNext-Bold;
+  src: url("./fonts/avenir-next-bold.woff");
+}
+
+@font-face {
+  font-family: AvenirNext-Reg;
+  src: url("./fonts/avenir-next-regular.woff");
+}
+
+@font-face {
+  font-family: AndaleMono;
+  src: url("./fonts/andale-mono.woff");
+}
+
+@font-face {
+  font-family: AvenirMedium;
+  src: url("./fonts/avenir-medium.woff");
+}
+
+.app-container {
+  font-family: AvenirNext-Bold;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-basis: 100%;
+  padding: 0;
+  margin: 0;
+}

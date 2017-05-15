@@ -1,0 +1,25 @@
+.gender-container {
+  font-family: AvenirNext-Bold;
+  font-size: 2.4rem;
+  font-weight: bold;
+  border: none;
+  background: none;
+  color: #dedede;
+  font-weight: bold;
+  outline: none;
+}
+
+.gender-container button {
+  font-family: AvenirNext-Bold;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  color: #dedede;
+  font-weight: bold;
+  outline: none;
+}
+
+.gender-container .gender-selected {
+  color: #4d42f8;
+}

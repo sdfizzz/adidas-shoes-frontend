@@ -1,0 +1,19 @@
+/* Filter.js */
+
+.filters-container {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 1.1rem 0 5rem 0;
+  padding-left: .8rem;
+  padding-right: .8rem;
+  height: 5.5rem;
+  width: 100%;
+}
+
+.filter-item {
+  vertical-align: middle;
+  text-align: center;
+  padding-right: 3.6rem;
+  width: auto;
+  margin: 1.2rem;
+}

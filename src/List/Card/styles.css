@@ -1,0 +1,51 @@
+.card-container {
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  background-color: #f4f4f4;
+  color: #fff;
+  padding: .6rem .85rem .9rem .85rem;
+  box-sizing: border-box;
+  margin: 0 .8rem 1.7rem .8rem;
+}
+
+.card-container .card-img {
+  width: 100%;
+  background-color:
+}
+
+.card-price {
+  display: block;
+  font-size: 3rem;
+  text-align: center;
+  color: #0e0e0e;
+  background-color: #fff;
+  text-decoration: none;
+  padding: 2.3rem 0 2.7rem 0;
+  justify-content: space-between;
+  margin-top: .8rem;
+}
+
+.card-price a {
+  text-decoration: none;
+}
+
+.card-badge-sale .card-price {
+  background-image: linear-gradient(107deg, #0c09bf, #966dd8);
+}
+
+.card-badge-sale .card-price a {
+  color: #fff;
+}
+
+.label-wrapper {
+  visibility: hidden;
+  position: absolute;
+  top: 1.7rem;
+  right: 1.7rem;
+  padding: 0;
+}
+
+.card-badge-sale .label-wrapper {
+  visibility: visible;
+}

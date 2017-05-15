@@ -1,0 +1,23 @@
+.product-main-panel {
+  display: block;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-family: AvenirNext-Bold;
+  padding: 1.5rem 3.1rem 3.1rem 3.1rem;
+}
+
+.product-buy-button {
+  border: none;
+  position: sticky;
+  background-image: linear-gradient(to right, #4949aa, #27275d);
+  margin-top: 17.6rem;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 3rem 0 3rem 0;
+  font-size: 3.2rem;
+  color: #fff;
+  font-family: AvenirNext-Bold;
+  text-transform: uppercase;
+  outline: none;
+}
