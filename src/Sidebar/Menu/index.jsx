@@ -1,32 +1,29 @@
 /* eslint-disable global-require */
 import React from 'react';
-import { Link } from 'react-router-dom';
-import './styles.css';
+import styled from 'styled-components';
+import Category from './Category';
+import SubCategory from './SubCategory';
+
+const MainNav = styled.nav`
+  margin: 148px auto;
+  text-align: center;
+  display: block;
+`;
+
+const SubNav = styled.nav`
+  padding-bottom: 50px;
+`;
 
 export default () => (
-  <nav id="main-menu">
-    <div className="main-menu-selected">
-      <Link to="/">
-        <span>SPORTS</span>
-        <img src={require('./arrow.svg')} srcSet="" alt="" className="menu-arrow" />
-      </Link>
-    </div>
-    <nav id="sub-menu">
-      <div className="sub-menu-selected">
-        <Link to="/">SHOES</Link>
-      </div>
-      <div>
-        <Link to="/">CLOTHING</Link>
-      </div>
-      <div>
-        <Link to="/">ACCESORIES</Link>
-      </div>
-    </nav>
-    <div>
-      <Link to="/">BRANDS</Link>
-    </div>
-    <div>
-      <Link to="/">MICOACH</Link>
-    </div>
-  </nav>
+  <MainNav>
+    <Category name="SPORTS" to="/" isSelected>
+      <SubNav>
+        <SubCategory name="SHOES" to="/" isSelected />
+        <SubCategory name="CLOTHING" to="/" />
+        <SubCategory name="ACCESORIES" to="/" />
+      </SubNav>
+    </Category>
+    <Category name="BRANDS" to="/" />
+    <Category name="MICOACH" to="/" />
+  </MainNav>
 );

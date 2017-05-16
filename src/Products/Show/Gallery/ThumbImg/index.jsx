@@ -4,16 +4,14 @@ import styled from 'styled-components';
 
 const Img = styled.img`
   display: block;
-  width: 94px;
-  height: 125px;
-  margin: 50px auto;
-  object-fit: contain;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 export default () => (
   <Img
-    src={require('./logo.png')}
-    srcSet={`${require('./logo@2x.png')} 2x, ${require('./logo@3x.png')} 3x`}
+    src={require('./main.jpg')}
+    srcSet={`${require('./main@2x.jpg')} 2x, ${require('./main@3x.jpg')} 3x`}
     alt=""
   />
 );

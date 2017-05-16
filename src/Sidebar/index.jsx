@@ -1,14 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Logo from './Logo';
 import Search from './Search';
 import Menu from './Menu';
 
-require('./styles.css');
+const Wrapper = styled.aside`
+  display: block;
+  min-width: 414px;
+  width: 30%;
+  padding: 0 22px;
+  background-color: #0e0e0e;
+`;
 
 export default () => (
-  <aside className="sidebar-container">
+  <Wrapper>
     <Logo />
     <Search />
     <Menu />
-  </aside>
+  </Wrapper>
 );
