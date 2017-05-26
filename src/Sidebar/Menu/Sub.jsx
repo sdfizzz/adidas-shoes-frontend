@@ -8,14 +8,18 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   display: block;
   margin-bottom: 25px;
-  color: #3c3c3c;
-  ${props => props.isSelected && 'color: #fff'};
-`;
+  color: ${props => (props.isOpened ? '#fff' : '#3c3c3c')};
+  transition: color 0.5s ease-out;
+  &:hover{
+    color: #fff;
+  }
+  &:active{
+    color: #fff;
+  }
+}`;
 
 export default props => (
-  <div>
-    <StyledLink to={props.to} isSelected={props.isSelected}>
-      <span>{props.name}</span>
-    </StyledLink>
-  </div>
+  <StyledLink name="list" to={props.to} isOpened={props.isOpened}>
+    {props.children}
+  </StyledLink>
 );

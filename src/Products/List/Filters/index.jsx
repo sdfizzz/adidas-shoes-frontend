@@ -6,16 +6,23 @@ import Button from './Button';
 
 const Container = styled.div`
   display: flex;
-  flex-flow: row nowrap;
-  margin: 11px 30px 11px 25px;
-  height: 55px;
-  width: 100%;
+  flex-flow: column nowrap;
+  text-align: left;
+  margin: 5px 30px;
+  @media only screen and (min-width: 768px){
+    flex-flow: row nowrap;
+    margin: 10px 30px;
+    height: 55px;
+  }
 `;
 
 const Wrapper = styled.div`
-  text-align: center;
   width: auto;
-  margin: auto 25px auto 30px;
+  margin: 10px 0;
+  @media only screen and (min-width: 768px){
+    text-align: center;
+    margin-right: 50px;
+  }
 `;
 
 const Gender = () => (
@@ -25,16 +32,19 @@ const Gender = () => (
   </Wrapper>
 );
 
+const SizeWrapper = styled(Wrapper)`
+  margin-right: 0;
+`;
+
 const SizeTitle = styled.span`
-  font-weight: bold;
   vertical-align: middle;
-  padding-right: 16px;
+  padding-right: 15px;
   font-size: 24px;
   color: #4d42f8;
 `;
 
 const Size = () => (
-  <Wrapper>
+  <SizeWrapper>
     <SizeTitle className="size-container-title">SIZE</SizeTitle>
     <Button>36</Button>
     <Button>37</Button>
@@ -43,7 +53,7 @@ const Size = () => (
     <Button>40</Button>
     <Button isSelected>41</Button>
     <Button>42</Button>
-  </Wrapper>
+  </SizeWrapper>
 );
 
 export default () => (

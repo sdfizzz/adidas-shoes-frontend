@@ -6,18 +6,21 @@ import Gallery from './Gallery';
 import Description from './Description';
 
 const MainPanel = styled.div`
-  display: block;
-  box-sizing: border-box;
-  background-color: #fff;
-  font-family: AvenirNext-Bold;
-  padding: 15px 31px 31px 31px;
+  padding: 15px;
+  @media only screen and (min-width: 768px){
+    display: block;
+    box-sizing: border-box;
+    background-color: #fff;
+    font-family: AvenirNext-Bold;
+    padding: 30px;
+    padding-top: 15px;
+  }
 `;
 
 const BuyButton = styled.button`
   border: none;
   position: sticky;
   background-image: linear-gradient(to right, #4949aa, #27275d);
-  margin-top: 176px;
   bottom: 0;
   right: 0;
   width: 100%;
@@ -27,6 +30,9 @@ const BuyButton = styled.button`
   font-family: AvenirNext-Bold;
   text-transform: uppercase;
   outline: none;
+  @media only screen and (min-width: 768px){
+    margin-top: 150px;
+  }
 `;
 
 export default () => (

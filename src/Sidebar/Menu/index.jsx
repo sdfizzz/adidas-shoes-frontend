@@ -1,29 +1,38 @@
 /* eslint-disable global-require */
 import React from 'react';
 import styled from 'styled-components';
-import Category from './Category';
-import SubCategory from './SubCategory';
+import Menu from './Menu';
+import SubMenu from './Sub';
 
 const MainNav = styled.nav`
-  margin: 148px auto;
+  display: ${props => (props.isOpened ? 'block' : 'none')};
+  ${props => props.isOpened && 'position: relative;'};
+  margin: 64px auto 0;
+  color: #fff;
   text-align: center;
-  display: block;
+  @media only screen and (min-width: 768px){
+    display: block;
+    text-align: center;
+    margin: 100px auto;
+  }
 `;
 
-const SubNav = styled.nav`
-  padding-bottom: 50px;
-`;
-
-export default () => (
-  <MainNav>
-    <Category name="SPORTS" to="/" isSelected>
-      <SubNav>
-        <SubCategory name="SHOES" to="/" isSelected />
-        <SubCategory name="CLOTHING" to="/" />
-        <SubCategory name="ACCESORIES" to="/" />
-      </SubNav>
-    </Category>
-    <Category name="BRANDS" to="/" />
-    <Category name="MICOACH" to="/" />
+export default props => (
+  <MainNav isOpened={props.isOpened}>
+    <Menu title="FOOTBALL">
+      <SubMenu to="/products/football/shoes">SHOES</SubMenu>
+      <SubMenu to="/products/football/clothing">CLOTHING</SubMenu>
+      <SubMenu to="/products/football/accesories">ACCESORIES</SubMenu>
+    </Menu>
+    <Menu title="RUNNING">
+      <SubMenu to="/products/running/shoes">SHOES</SubMenu>
+      <SubMenu to="/products/running/clothing">CLOTHING</SubMenu>
+      <SubMenu to="/products/running/accesories">ACCESORIES</SubMenu>
+    </Menu>
+    <Menu title="BASKETBALL">
+      <SubMenu to="/products/backetball/shoes">SHOES</SubMenu>
+      <SubMenu to="/products/backetball/clothing">CLOTHING</SubMenu>
+      <SubMenu to="/products/backetball/accesories">ACCESORIES</SubMenu>
+    </Menu>
   </MainNav>
 );

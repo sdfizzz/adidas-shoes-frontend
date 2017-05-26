@@ -3,9 +3,14 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  width: 55px;
-  height: 55px;
-  background-color: #ebebeb;
+  display: none;
+  @media only screen and (min-width: 768px){
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-color: #ebebeb;
+    margin-right: 30px;
+  }
 `;
 
 const Img = styled.img`

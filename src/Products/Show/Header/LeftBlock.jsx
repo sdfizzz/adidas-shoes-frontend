@@ -1,26 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const H1 = styled.h1`
-  font-size: 64px;
-  padding-bottom: 14px;
-  margin: 0;
+const Title = styled.h1`
+  font-size: 36px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 15px 0 0;
+  @media only screen and (min-width: 768px){
+    font-size: 64px;
+    padding-bottom: 15px;
+  }
 `;
+
 const Button = styled.button`
-  height: 75px;
-  width: 75px;
-  font-size: 18px;
-  border-width: 0;
-  border-radius: 50%;
-  color: #fff;
-  background-color: #e3e3e3;
-  font-family: AvenirNext-Bold;
-  outline: none;
+  display: none;
+  @media only screen and (min-width: 768px){
+    display: block;
+    padding: 30px 20px;
+    font-size: 18px;
+    border-width: 0;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #e3e3e3;
+    font-family: AvenirNext-Bold;
+    outline: none;
+  }
 `;
 
 export default () => (
   <div>
-    <H1>ULTRA<br />BOOST</H1>
-    <Button>SALE</Button>
+    <Title>ultra boost</Title>
+    <Button>SAVE</Button>
   </div>
 );

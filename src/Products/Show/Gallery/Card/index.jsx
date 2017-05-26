@@ -3,9 +3,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  border-color: ${props => (props.isSelected ? '#e7e7e7' : 'inherit')};
-  border-style: ${props => (props.isSelected ? 'solid' : 'none')};
-  border-width: ${props => (props.isSelected ? '6px' : '0')};;
+  border-color: ${props => (props.isSelected ? '#e7e7e7' : '#fff')};
+  border-style: solid;
+  border-width: 6px;
+  transition: all .2s;
+  &:hover{
+    border-color: #e7e7e7;
+  }
 `;
 
 const Button = styled.button`
@@ -14,10 +18,17 @@ const Button = styled.button`
   background-color: inherit;
 `;
 
+const Img = styled.img`
+  max-width: 60px;
+  @media only screen and (min-width: 768px){
+    max-width: 100%;
+  }
+`;
+
 export default props => (
   <Container isSelected={props.isSelected}>
-    <Button>
-      <img
+    <Button onClick={props.onSelect}>
+      <Img
         src={require('./img.jpg')}
         srcSet={`${require('./img@2x.jpg')} 2x, ${require('./img@3x.jpg')} 3x`}
         alt=""

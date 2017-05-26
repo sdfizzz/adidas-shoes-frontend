@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import 'normalize.css';
 import styled from 'styled-components';
@@ -11,19 +11,24 @@ import Show from './Products/Show';
 
 const Container = styled.div`
   font-family: AvenirNext-Bold;
-  display: flex;
-  flex-flow: row nowrap;
-  flex-basis: 100%;
   padding: 0;
   margin: 0;
+  @media only screen and (min-width: 768px){
+    display: flex;
+    flex-flow: row nowrap;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
 `;
 
 export default () => (
   <Router>
     <Container>
       <Sidebar />
-      <Route exact path="/" component={List} />
-      <Route path="/detail" component={Show} />
+      <Switch>
+        <Route path="/products/:sport/:category" component={List} />
+        <Route path="/products/:id" component={Show} />
+      </Switch>
     </Container>
   </Router>
 );
