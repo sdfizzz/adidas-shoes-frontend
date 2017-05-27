@@ -1,25 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   font-size: 24px;
   font-family: AndaleMono;
   text-decoration: none;
   display: block;
   margin-bottom: 25px;
-  color: ${props => (props.isOpened ? '#fff' : '#3c3c3c')};
-  transition: color 0.5s ease-out;
-  &:hover{
+  color: #3c3c3c;
+  &.active{
     color: #fff;
   }
-  &:active{
+  &:hover{
+    transition: color 0.5s ease-out;
     color: #fff;
   }
 }`;
 
 export default props => (
-  <StyledLink name="list" to={props.to} isOpened={props.isOpened}>
+  <StyledLink to={props.to} activeClassName="active">
     {props.children}
   </StyledLink>
 );

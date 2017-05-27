@@ -19,30 +19,45 @@ const Hr = styled.hr`
   border: none;
 `;
 
+const cards = [
+  {
+    id: 0,
+    isSale: true,
+  },
+  {
+    id: 1,
+    isSale: false,
+  },
+  {
+    id: 2,
+    isSale: true,
+  },
+  {
+    id: 3,
+    isSale: false,
+  },
+];
+
 const CardCol = props => (
   <Col xs={12} sm={6} md={4} lg={3}>
-    <Card isSale={props.isSale} id="5" />
+    <Card isSale={props.isSale} id={props.id} to={props.to} />
   </Col>
 );
 
-export default () => (
+export default props => (
   <Container>
     <Filters />
     <Hr />
     <Grid fluid>
       <Row>
-        <CardCol isSale />
-        <CardCol />
-        <CardCol isSale />
-        <CardCol />
-        <CardCol isSale />
-        <CardCol />
-        <CardCol isSale />
-        <CardCol />
-        <CardCol isSale />
-        <CardCol />
-        <CardCol isSale />
-        <CardCol />
+        {cards.map(card => (
+          <CardCol
+            key={card.id}
+            id={card.id}
+            isSale={card.isSale}
+            to={`/products/${props.sport}/${props.category}/${props.id}`}
+          />
+        ))}
       </Row>
     </Grid>
   </Container>

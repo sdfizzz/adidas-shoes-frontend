@@ -37,6 +37,7 @@ export default class Gallery extends React.Component {
         <Cards>
           {cards.map(id => (
             <Card
+              key={id}
               isSelected={id === this.state.selectedId}
               onSelect={() => this.handleSelectionChanged(id)}
             />

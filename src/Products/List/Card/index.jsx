@@ -57,7 +57,7 @@ export default props => (
       srcSet={`${require('./bitmap@2x.jpg')} 2x, ${require('./bitmap@3x.jpg')} 3x`}
       alt=""
     />
-    <StyledLink to={`/products/${props.id}`} isSale={props.isSale}>
+    <StyledLink to={props.to} isSale={props.isSale}>
       <Price isSale={props.isSale}>
         $170
       </Price>
