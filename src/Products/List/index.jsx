@@ -36,6 +36,54 @@ const cards = [
     id: 3,
     isSale: false,
   },
+  {
+    id: 4,
+    isSale: true,
+  },
+  {
+    id: 5,
+    isSale: false,
+  },
+  {
+    id: 6,
+    isSale: true,
+  },
+  {
+    id: 7,
+    isSale: false,
+  },
+  {
+    id: 8,
+    isSale: true,
+  },
+  {
+    id: 9,
+    isSale: false,
+  },
+  {
+    id: 10,
+    isSale: true,
+  },
+  {
+    id: 11,
+    isSale: false,
+  },
+  {
+    id: 12,
+    isSale: true,
+  },
+  {
+    id: 13,
+    isSale: false,
+  },
+  {
+    id: 14,
+    isSale: true,
+  },
+  {
+    id: 15,
+    isSale: false,
+  },
 ];
 
 const CardCol = props => (
