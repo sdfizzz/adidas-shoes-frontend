@@ -6,9 +6,11 @@ install:
   - npm install surge
 script:
   - npm run lint
+  - npm run build
 deploy:
-  provider: script
+  provider: surge
   project: ./build/
+  domain: selfish-roof.surge.sh
   skip_cleanup: true
   script:
-    - npm run build && surge -d selfish-roof.surge.sh --token=$SURGE_TOKEN -p build
+    - surge build selfish-roof.surge.sh
