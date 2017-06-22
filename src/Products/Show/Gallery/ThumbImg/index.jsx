@@ -8,10 +8,4 @@ const Img = styled.img`
   margin: 0 auto;
 `;
 
-export default () => (
-  <Img
-    src={require('./main.jpg')}
-    srcSet={`${require('./main@2x.jpg')} 2x, ${require('./main@3x.jpg')} 3x`}
-    alt=""
-  />
-);
+export default props => <Img src={props.src} />;

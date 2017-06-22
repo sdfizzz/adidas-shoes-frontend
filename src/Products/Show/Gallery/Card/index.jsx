@@ -28,11 +28,7 @@ const Img = styled.img`
 export default props => (
   <Container isSelected={props.isSelected}>
     <Button onClick={props.onSelect}>
-      <Img
-        src={require('./img.jpg')}
-        srcSet={`${require('./img@2x.jpg')} 2x, ${require('./img@3x.jpg')} 3x`}
-        alt=""
-      />
+      <Img src={props.src} />
     </Button>
   </Container>
 );

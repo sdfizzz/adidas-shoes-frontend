@@ -27,9 +27,9 @@ const Button = styled.button`
   }
 `;
 
-export default () => (
+export default props => (
   <div>
-    <Title>ultra boost</Title>
+    <Title>{props.title}</Title>
     <Button>SAVE</Button>
   </div>
 );

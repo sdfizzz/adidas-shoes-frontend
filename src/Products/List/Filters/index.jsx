@@ -25,13 +25,6 @@ const Wrapper = styled.div`
   }
 `;
 
-const Gender = () => (
-  <Wrapper>
-    <Button isSelected>MAN</Button>
-    <Button>WOMAN</Button>
-  </Wrapper>
-);
-
 const SizeWrapper = styled(Wrapper)`
   margin-right: 0;
 `;
@@ -43,23 +36,28 @@ const SizeTitle = styled.span`
   color: #4d42f8;
 `;
 
-const Size = () => (
+const Size = props => (
   <SizeWrapper>
     <SizeTitle className="size-container-title">SIZE</SizeTitle>
-    <Button>36</Button>
-    <Button>37</Button>
-    <Button>38</Button>
-    <Button>39</Button>
-    <Button>40</Button>
-    <Button isSelected>41</Button>
-    <Button>42</Button>
+    {props.sizes.map(size => (
+      <Button
+        key={size}
+        isSelected={props.selected.indexOf(size) !== -1}
+        onClick={() => props.handleFilterChanged(size)}
+      >
+        {size}
+      </Button>
+    ))}
   </SizeWrapper>
 );
 
-export default () => (
+export default props => (
   <Container>
     <Icon />
-    <Gender />
-    <Size />
+    <Size
+      sizes={props.sizes}
+      selected={props.selected}
+      handleFilterChanged={props.handleFilterChanged}
+    />
   </Container>
 );

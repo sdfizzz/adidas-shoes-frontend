@@ -13,14 +13,8 @@ const Wrapper = styled.p`
   }
 `;
 
-const FirstWord = styled.span`
-  color: #6e6e6e;
-`;
-
-export default () => (
+export default props => (
   <Wrapper>
-    <FirstWord>Adidas </FirstWord>
-    is a German multinational corporation, headquartered in Herzogenaurach,
-    Germany, that designs and manufactures shoes, clothing and accessories.
+    {props.content}
   </Wrapper>
 );

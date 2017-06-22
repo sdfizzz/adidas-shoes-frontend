@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import Header from './Header';
 import Gallery from './Gallery';
 import Description from './Description';
+import Loading from '../../Loading';
+import { get } from '../../api';
 
 const MainPanel = styled.div`
   padding: 15px;
@@ -35,13 +37,40 @@ const BuyButton = styled.button`
   }
 `;
 
-export default () => (
-  <section>
-    <MainPanel>
-      <Header />
-      <Gallery />
-      <Description />
-    </MainPanel>
-    <BuyButton>Buy Now</BuyButton>
-  </section>
-);
+export default class Show extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { item: {}, isLoading: true };
+    this.fetchData = this.fetchData.bind(this);
+  }
+
+  componentDidMount() {
+    this.fetchData(this.props);
+  }
+
+  fetchData(props) {
+    this.setState({ isLoading: true });
+    const { sport, category, id } = props.match.params;
+    get(`v1/products/${sport}/${category}/${id}`).then(item =>
+      this.setState({ item, isLoading: false }),
+    );
+  }
+
+  render() {
+    if (this.state.isLoading) return <Loading />;
+    return (
+      <section>
+        <MainPanel>
+          <Header
+            title={this.state.item.title}
+            price={this.state.item.price}
+            currency={this.state.item.currency}
+          />
+          <Gallery images={this.state.item.images} />
+          <Description content={this.state.item.description} />
+        </MainPanel>
+        <BuyButton>Buy Now</BuyButton>
+      </section>
+    );
+  }
+}

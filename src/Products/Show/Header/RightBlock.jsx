@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import Label from '../../../components/Label';
 import Colors from './Colors';
+import { getPriceString } from '../../functions';
 
 const Container = styled.div`
   display: block;
@@ -47,11 +48,13 @@ export default class Header extends React.Component {
   }
 
   render() {
+    const price = getPriceString(this.props.price, this.props.currency);
+
     return (
       <Container>
         <Colors onChange={this.handleChange} />
         <SaleLabel color={this.state.selectedColor}>sale</SaleLabel>
-        <Price>$170</Price>
+        <Price>{price}</Price>
       </Container>
     );
   }

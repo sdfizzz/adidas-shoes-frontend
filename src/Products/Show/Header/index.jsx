@@ -20,9 +20,9 @@ const Container = styled.header`
   }
 `;
 
-export default () => (
+export default props => (
   <Container>
-    <LeftBlock />
-    <RightBlock />
+    <LeftBlock title={props.title} />
+    <RightBlock price={props.price} currency={props.currency} />
   </Container>
 );

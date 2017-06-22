@@ -20,19 +20,19 @@ const MainNav = styled.nav`
 export default props => (
   <MainNav isOpened={props.isOpened}>
     <Menu title="FOOTBALL">
-      <SubMenu to="/products/football/shoes">SHOES</SubMenu>
-      <SubMenu to="/products/football/clothing">CLOTHING</SubMenu>
-      <SubMenu to="/products/football/accesories">ACCESORIES</SubMenu>
+      <SubMenu to="/products/football/cleats">CLEATS</SubMenu>
+      <SubMenu to="/products/football/apparel">APPAREL</SubMenu>
+      <SubMenu to="/products/football/accessories">ACCESSORIES</SubMenu>
     </Menu>
     <Menu title="RUNNING">
       <SubMenu to="/products/running/shoes">SHOES</SubMenu>
-      <SubMenu to="/products/running/clothing">CLOTHING</SubMenu>
-      <SubMenu to="/products/running/accesories">ACCESORIES</SubMenu>
+      <SubMenu to="/products/running/apparel">APPAREL</SubMenu>
+      <SubMenu to="/products/running/accessories">ACCESSORIES</SubMenu>
     </Menu>
     <Menu title="BASKETBALL">
-      <SubMenu to="/products/backetball/shoes">SHOES</SubMenu>
-      <SubMenu to="/products/backetball/clothing">CLOTHING</SubMenu>
-      <SubMenu to="/products/backetball/accesories">ACCESORIES</SubMenu>
+      <SubMenu to="/products/basketball/shoes">SHOES</SubMenu>
+      <SubMenu to="/products/basketball/apparel">APPAREL</SubMenu>
+      <SubMenu to="/products/basketball/accessories">ACCESSORIES</SubMenu>
     </Menu>
   </MainNav>
 );

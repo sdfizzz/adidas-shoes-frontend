@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import ThumbImg from './ThumbImg';
 import Card from './Card';
+import { getImage } from '../../functions';
 
 const Cards = styled.div`
   display: flex;
@@ -13,12 +14,12 @@ const Cards = styled.div`
   }
 `;
 
-const cards = [0, 1, 2, 3];
-
 export default class Gallery extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      cards: props.images,
+      isLoading: true,
       selectedId: 0,
     };
     this.handleSelectionChanged = this.handleSelectionChanged.bind(this);
@@ -31,15 +32,19 @@ export default class Gallery extends React.Component {
   }
 
   render() {
+    const imgs = this.props.images;
+    const tmbImg = imgs[this.state.selectedId];
+    const tmbImgSrc = getImage(tmbImg.id, tmbImg.fileName, 1024);
     return (
       <section>
-        <ThumbImg id={this.state.selectedId} />
+        <ThumbImg src={tmbImgSrc} />
         <Cards>
-          {cards.map(id => (
+          {this.state.cards.map((img, index) => (
             <Card
-              key={id}
-              isSelected={id === this.state.selectedId}
-              onSelect={() => this.handleSelectionChanged(id)}
+              key={img.id}
+              isSelected={index === this.state.selectedId}
+              onSelect={() => this.handleSelectionChanged(index)}
+              src={getImage(img.id, img.fileName, 128)}
             />
           ))}
         </Cards>

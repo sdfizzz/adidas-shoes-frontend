@@ -2,8 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-
-import Label from '../../../components/Label';
+import { getImage, getPriceString } from '../../functions';
 
 const Container = styled.div`
   display: flex;
@@ -19,12 +18,6 @@ const Container = styled.div`
 const Img = styled.img`
   width: 100%;
   margin-bottom: 8px;
-`;
-
-const LabelWrapper = styled.div`
-  position: absolute;
-  top: 20px;
-  right: 90px;
 `;
 
 const Price = styled.div`
@@ -52,19 +45,11 @@ const StyledLink = styled(Link)`
 
 export default props => (
   <Container>
-    <Img
-      src={require('./bitmap.jpg')}
-      srcSet={`${require('./bitmap@2x.jpg')} 2x, ${require('./bitmap@3x.jpg')} 3x`}
-      alt=""
-    />
-    <StyledLink to={props.to} isSale={props.isSale}>
-      <Price isSale={props.isSale}>
-        $170
+    <Img src={getImage(props.image.id, props.image.fileName, 256)} alt="" />
+    <StyledLink to={props.to}>
+      <Price>
+        {getPriceString(props.price, props.currency)}
       </Price>
     </StyledLink>
-    {props.isSale &&
-      <LabelWrapper>
-        <Label color="#ff5c5c">sale</Label>
-      </LabelWrapper>}
   </Container>
 );

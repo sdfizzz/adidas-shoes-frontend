@@ -28,8 +28,8 @@ export default () => (
       <Switch>
         <Route exact path="/products/:sport/:category" component={List} />
         <Route path="/products/:sport/:category/:id" component={Show} />
+        <Redirect to="/products/football/cleats" />
       </Switch>
-      <Redirect to="/products/football/shoes" />
     </Container>
   </Router>
 );
