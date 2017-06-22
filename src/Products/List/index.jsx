@@ -48,6 +48,7 @@ export default class List extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.setState({ sizes: [] });
     this.fetchData(nextProps);
   }
 

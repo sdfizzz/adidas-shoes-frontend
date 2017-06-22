@@ -26,7 +26,7 @@ const SaleLabel = styled(Label)`
 const Price = styled.h2`
   position: relative;
   font-size: 80px;
-  color: #e2e2e2;
+  color: #4949aa;
   font-weight: 400;
   margin: 0;
   text-align: left;

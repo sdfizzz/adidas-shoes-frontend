@@ -6,6 +6,7 @@ const Img = styled.img`
   display: block;
   width: 80%;
   margin: 0 auto;
+  margin-bottom: 10px;
 `;
 
 export default props => <Img src={props.src} />;
