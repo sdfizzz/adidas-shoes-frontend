@@ -18,14 +18,6 @@ const Container = styled.div`
   }
 `;
 
-const StyledLink = styled(Link)`
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  background-color: #4949aa;
-  margin: 5px auto;
-`;
-
 const PromoWrapper = styled.div`
   background-color: #fff;
   margin: 6px;
