@@ -7,22 +7,16 @@ import { getUniqueSizes, filterCards } from './functions';
 import Filters from './Filters';
 import Card from './Card';
 import Loading from '../../Loading';
+import Title from '../../components/Title';
+import Basket from '../../BasketIcon';
+import Footer from '../../components/Footer';
 
 const Container = styled.section`
   display: inline-block;
-  padding: 0;
+  padding: 0 32px;
 `;
 
-const Hr = styled.hr`
-  width: 100%;
-  height: 5px;
-  margin: 0;
-  opacity: 0.5;
-  background-color: #e6e6e6;
-  border: none;
-`;
-
-const CardCol = props => (
+const CardCol = props =>
   <Col xs={12} sm={6} md={4} lg={3}>
     <Card
       id={props.id}
@@ -32,8 +26,7 @@ const CardCol = props => (
       image={props.image}
       title={props.title}
     />
-  </Col>
-);
+  </Col>;
 
 export default class List extends React.Component {
   constructor(props) {
@@ -76,33 +69,38 @@ export default class List extends React.Component {
     const filteredCards = filterCards(this.state.cards, this.state.sizes);
 
     return (
-      <Container>
-        <Filters
-          sizes={uniqueSizes}
-          selected={this.state.sizes}
-          handleFilterChanged={this.handleFilterChanged}
-        />
-        <Hr />
-        <Grid fluid>
-          <Row>
-            {this.state.isLoading
-              ? <Loading />
-              : filteredCards.map(card => (
-                <CardCol
-                  key={card.id}
-                  id={card.id}
-                  title={card.title}
-                  price={card.price}
-                  currency={card.currency}
-                  description={card.description}
-                  sizes={card.sizes}
-                  image={card.images[0]}
-                  to={`/products/${this.props.match.params.sport}/${this.props.match.params.category}/${card.id}`}
-                />
-                ))}
-          </Row>
-        </Grid>
-      </Container>
+      <div>
+        <Basket />
+        <Container>
+          <Title title={this.props.match.params.category} />
+          <Filters
+            sizes={uniqueSizes}
+            selected={this.state.sizes}
+            handleFilterChanged={this.handleFilterChanged}
+          />
+          <Grid fluid>
+            <Row>
+              {this.state.isLoading
+                ? <Loading />
+                : filteredCards.map(card =>
+                  <CardCol
+                    key={card.id}
+                    id={card.id}
+                    title={card.title}
+                    price={card.price}
+                    currency={card.currency}
+                    description={card.description}
+                    sizes={card.sizes}
+                    image={card.images[0]}
+                    to={`/products/${this.props.match.params.sport}/${this.props.match.params
+                        .category}/${card.id}`}
+                  />,
+                  )}
+            </Row>
+          </Grid>
+        </Container>
+        <Footer />
+      </div>
     );
   }
 }

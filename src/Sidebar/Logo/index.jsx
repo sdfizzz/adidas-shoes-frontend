@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,9 +12,9 @@ const Img = styled.img`
   padding: 6px;
   @media only screen and (min-width: 768px){
     position: relative;
-    width: 94px;
-    height: 94px;
-    margin: 30px auto;
+    width: 62px;
+    height: 62px;
+    margin: 20px auto;
   }
 `;
 

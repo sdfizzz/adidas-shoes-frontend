@@ -15,10 +15,10 @@ const Img = styled.img`
   display: block;
   margin: 0 auto;
   width: 100%;
-  animation: ${rotation} infinite 20s linear;
+  animation: ${rotation} infinite 2s linear;
   @media only screen and (min-width: 768px){
     width: 100px;
   }
 `;
 
-export default () => <Img src={require('./logo.svg')} />;
+export default () => <Img src={require('./loader.svg')} />;

@@ -3,11 +3,11 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledLink = styled(NavLink)`
-  font-size: 24px;
-  font-family: AndaleMono;
+  font-size: 16px;
+  font-family: GillSans, sans-serif;
   text-decoration: none;
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: #3c3c3c;
   &.active{
     color: #fff;
@@ -18,8 +18,7 @@ const StyledLink = styled(NavLink)`
   }
 }`;
 
-export default props => (
+export default props =>
   <StyledLink to={props.to} activeClassName="active">
     {props.children}
-  </StyledLink>
-);
+  </StyledLink>;

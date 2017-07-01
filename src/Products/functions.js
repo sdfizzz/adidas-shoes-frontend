@@ -5,7 +5,7 @@ export function getImage(id, fileName, height) {
 export function getPriceString(price, currency) {
   switch (currency) {
     case 'USD':
-      return `${price / 100}$`;
+      return `$${price / 100}`;
     case 'RUR':
       return `₽${price / 100}`;
     default:

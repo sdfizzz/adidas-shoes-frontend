@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 import Description from './Description';
 import Loading from '../../Loading';
 import { get } from '../../api';
+import Footer from '../../components/Footer';
 
 const MainPanel = styled.div`
   padding: 15px;
@@ -32,9 +33,6 @@ const BuyButton = styled.button`
   font-family: AvenirNext-Bold;
   text-transform: uppercase;
   outline: none;
-  @media only screen and (min-width: 768px){
-    margin-top: 150px;
-  }
 `;
 
 export default class Show extends React.Component {
@@ -69,6 +67,7 @@ export default class Show extends React.Component {
           <Gallery images={this.state.item.images} />
           <Description content={this.state.item.description} />
         </MainPanel>
+        <Footer />
         <BuyButton>Buy Now</BuyButton>
       </section>
     );

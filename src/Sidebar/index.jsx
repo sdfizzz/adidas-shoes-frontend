@@ -1,9 +1,7 @@
-/* eslint-disable global-require */
 import React from 'react';
 import styled from 'styled-components';
 
 import Logo from './Logo';
-import Search from './Search';
 import Menu from './Menu';
 
 const Wrapper = styled.aside`
@@ -16,13 +14,9 @@ const Wrapper = styled.aside`
   padding: 0;
   @media only screen and (min-width: 768px){
     display: block;
-    min-width: 280px;
-    width: 30%;
-    height: inherit;
+    width: 150px;
     padding: 0 20px;
-  }
-  @media only screen and (min-width: 992px){
-    min-width: 370px;
+    height: inherit;
   }
 `;
 
@@ -58,7 +52,6 @@ export default class Sidebar extends React.Component {
       <Wrapper isOpened={this.state.isOpened}>
         <Logo />
         <MenuButton onClick={this.toggle} />
-        <Search />
         <Menu isOpened={this.state.isOpened} />
       </Wrapper>
     );

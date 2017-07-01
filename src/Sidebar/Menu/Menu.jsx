@@ -1,26 +1,30 @@
-/* eslint-disable global-require */
 import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
   font-family: AvenirNext-Bold;
-  font-size: 24px;
+  font-size: 18px;
   outline: none;
   background: none;
   border: none;
-  margin-bottom: 15px;
+  margin: 0;
   color: ${props => (props.isOpened ? '#fff' : '#3c3c3c')};
-`;
-
-const Arrow = styled.img`
-  opacity: ${props => (props.isOpened ? '1' : '0.2')};
-  transform: rotate(${props => (props.isOpened ? '0' : '90deg')});
-  padding: 4px;
-  margin-left: 7px;
+  &.active{
+    color: #fff;
+  }
+  &:hover{
+    transition: color 0.5s ease-out;
+    color: #fff;
+  }
 `;
 
 const Container = styled.div`
-  margin-bottom: ${props => (props.isOpened ? '50px' : '0')};
+  margin-bottom: 0;
+  margin-top: 20px;
+`;
+
+const Img = styled.img`
+  margin-top: 20px;
 `;
 
 export default class Main extends React.Component {
@@ -36,11 +40,13 @@ export default class Main extends React.Component {
 
   render() {
     return (
-      <Container isOpened={this.state.isOpened}>
+      <Container isOpened={this.state.isOpened} src={this.props.src}>
+        <Img src={this.props.src} alt="" />
         <Button isOpened={this.state.isOpened} onClick={this.toggle}>
-          {this.props.title}
+          <div>
+            {this.props.title}
+          </div>
         </Button>
-        <Arrow isOpened={this.state.isOpened} src={require('./arrow.svg')} />
         {this.state.isOpened && this.props.children}
       </Container>
     );
