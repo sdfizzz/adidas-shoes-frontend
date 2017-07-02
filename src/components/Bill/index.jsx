@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Order from './Order';
+import Order from '../Order';
+import Images from './Images';
 
 const Container = styled.div`
   display: block;
@@ -48,11 +49,15 @@ const CheckoutWrapper = styled.div`
   font-weight: bold;
   cursor: pointer;
 `;
+
 const Checkout = () => <CheckoutWrapper>Checkout</CheckoutWrapper>;
+
+const images = [require('./img1.png'), require('./img2.png')];
 
 export default props =>
   <Container>
+    {!props.checkout && <Images images={images} />}
     <Order summ={props.summ} count={props.count} />
     <Promo />
-    <Checkout />
+    {props.checkout && <Checkout />}
   </Container>;

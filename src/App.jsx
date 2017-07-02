@@ -9,6 +9,7 @@ import Sidebar from './Sidebar';
 import List from './Products/List';
 import Show from './Products/Show';
 import Basket from './Basket';
+import Checkout from './Checkout';
 
 const Container = styled.div`
   font-family: AvenirNext-Bold;
@@ -26,11 +27,12 @@ const Container = styled.div`
 export default () =>
   <Router>
     <Switch>
-      <Route path="/basket" component={Basket} />
       <Container>
         <Sidebar />
         <Switch>
           <Route exact path="/products/:sport/:category" component={List} />
+          <Route path="/basket" component={Basket} />
+          <Route path="/checkout" component={Checkout} />
           <Route path="/products/:sport/:category/:id" component={Show} />
           <Redirect to="/products/football/cleats" />
         </Switch>
