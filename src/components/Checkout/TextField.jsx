@@ -31,6 +31,8 @@ const Label = styled.label`
 
 export default props =>
   <Container>
-    <Input type="text" id={props.id} name={props.id} placeholder={props.placeholder} />
+    <Input type="text" id={props.id} name={props.id} placeholder={props.placeholder}>
+      {props.children}
+    </Input>
     <Label htmlFor={props.id}>{props.label}</Label>
   </Container>;

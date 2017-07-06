@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Label from '../../../components/Label';
+import Label from '../../../Label';
 import Colors from './Colors';
 import { getPriceString } from '../../functions';
 

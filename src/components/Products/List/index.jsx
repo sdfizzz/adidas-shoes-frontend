@@ -1,15 +1,15 @@
 import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import styled from 'styled-components';
-import { get } from '../../api';
+import { get } from '../../../api';
 import { getUniqueSizes, filterCards } from './functions';
 
 import Filters from './Filters';
 import Card from './Card';
 import Loading from '../../Loading';
-import Title from '../../components/Title';
+import Title from '../../Title';
 import Basket from '../../BasketIcon';
-import Footer from '../../components/Footer';
+import Footer from '../../Footer';
 
 const Container = styled.section`
   display: inline-block;

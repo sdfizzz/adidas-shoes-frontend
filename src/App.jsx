@@ -4,24 +4,25 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import 'normalize.css';
 import styled from 'styled-components';
 import './App.css';
+import media from './media';
 
-import Sidebar from './Sidebar';
-import List from './Products/List';
-import Show from './Products/Show';
-import Basket from './Basket';
-import Checkout from './Checkout';
+import Sidebar from './components/Sidebar';
+import List from './components/Products/List';
+import Show from './components/Products/Show';
+import Basket from './components/Basket';
+import Checkout from './components/Checkout';
 
 const Container = styled.div`
   font-family: AvenirNext-Bold;
   padding: 0;
   margin: 0;
-  @media only screen and (min-width: 768px){
+  ${media.tablet`
     display: flex;
     flex-flow: row nowrap;
     border-spacing: 0;
     border-collapse: collapse;
     height: inherit;
-  }
+  `}
 `;
 
 export default () =>

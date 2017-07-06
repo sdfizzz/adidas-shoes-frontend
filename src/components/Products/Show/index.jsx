@@ -5,8 +5,8 @@ import Header from './Header';
 import Gallery from './Gallery';
 import Description from './Description';
 import Loading from '../../Loading';
-import { get } from '../../api';
-import Footer from '../../components/Footer';
+import { get } from '../../../api';
+import Footer from '../../Footer';
 
 const MainPanel = styled.div`
   padding: 15px;

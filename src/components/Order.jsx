@@ -9,6 +9,7 @@ const OrderWrapper = styled.div`
 
 const Title = styled.div`
   font-size: 24px;
+  color: blue;
   margin-bottom: 10px;
 `;
 

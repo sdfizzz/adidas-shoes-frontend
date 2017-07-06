@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Checkbox } from 'react-icheck';
-import 'icheck/skins/all.css';
 
-import BackLink from '../components/BackLink';
+import media from '../../media';
+import BackLink from '../BackLink';
 import TextField from './TextField';
 import Payments from './Payments';
-import Footer from '../components/Footer';
-import Bill from '../components/Bill';
+import Footer from '../Footer';
+import Bill from '../Bill';
+import Checkbox from '../Checkbox';
+import ClickableDate from './ClickableDate';
 
 const Container = styled.div`
   width: 100%;
@@ -16,13 +17,20 @@ const Container = styled.div`
 `;
 
 const HeaderContainer = styled.div`
-  margin: 20px 40px;
+  margin: 20px 60px;
+  font-weight: bold;
+`;
+
+const Form = styled.form`
+  margin: 0 60px;
 `;
 
 const ContentContainer = styled.div`
   display: flex;
-  flex-flow: row nowrap;
-  margin: 0 40px;
+  flex-flow: row wrap;
+  ${media.desktop`
+    flex-wrap: nowrap;
+  `}
 `;
 
 const SaveHint = styled.div`
@@ -31,17 +39,26 @@ const SaveHint = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 40px;
-  font-family: AvenirNext-Bold;
-  padding: 20px 0 30px;
+  font-size: 44px;
+  font-family: AvenirNext-Reg;
+  padding: 40px 0 30px;
 `;
 
 const LeftColumn = styled.div`
   width: auto;
+  padding-right: 0;
+  flex-basis: 100%;
+  ${media.desktop`
+    flex-basis: 75%;
+    padding-right: 30px;
+  `}
 `;
 
 const RightColumn = styled.div`
-  width: 200px;
+  flex-basis: 100%;
+  ${media.desktop`
+    flex-basis: 25%;
+  `}
 `;
 
 const Delivery = styled.div`
@@ -79,6 +96,10 @@ const PurchaseButton = styled.button`
   outline: none;
 `;
 
+const StyledTextField = styled(TextField)`
+  padding-bottom: 300px;
+`;
+
 export default () =>
   <Container>
     <HeaderContainer>
@@ -86,12 +107,12 @@ export default () =>
       <SaveHint>Saved</SaveHint>
       <Title>Checkout</Title>
     </HeaderContainer>
-    <ContentContainer>
-      <LeftColumn>
-        <Delivery>Delivery - $3</Delivery>
-        <form>
+    <Form>
+      <Delivery>Delivery – $3</Delivery>
+      <ContentContainer>
+        <LeftColumn>
           <Row first>
-            <TextField
+            <StyledTextField
               id="address"
               placeholder="Ireland,"
               label="Country, street name and number, type of building, city, postal code"
@@ -106,25 +127,25 @@ export default () =>
             />
           </Row>
           <Row>
-            <InfoLabel htmlFor="info">Delivery by DHL on Wednesday 5 July, 08:00 - 18:00</InfoLabel>
+            <InfoLabel htmlFor="info">Delivery by DHL on {<ClickableDate />}</InfoLabel>
           </Row>
           <Row>
             <Checkbox
+              id="agreement"
               checkboxClass="icheckbox_square-blue"
-              increaseArea="40%"
-              label="  My shipping and billing informations are
+              label="My shipping and billing informations are
         the same and I agree with all needed agreements"
             />
           </Row>
           <Row>
             <Payments />
           </Row>
-          <PurchaseButton type="submit"> purchase $212,38</PurchaseButton>
-        </form>
-      </LeftColumn>
-      <RightColumn>
-        <Bill summ="$440" count="3" noCheckout />
-      </RightColumn>
-    </ContentContainer>
+        </LeftColumn>
+        <RightColumn>
+          <Bill summ="$440" count="3" noCheckout />
+        </RightColumn>
+      </ContentContainer>
+      <PurchaseButton type="submit"> purchase $212,38</PurchaseButton>
+    </Form>
     <Footer />
   </Container>;

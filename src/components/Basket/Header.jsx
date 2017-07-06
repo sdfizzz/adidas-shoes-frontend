@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Title from '../components/Title';
-import BackLink from '../components/BackLink';
+import Title from '../Title';
+import BackLink from '../BackLink';
 
 const HeaderContainer = styled.div`
   display: block;

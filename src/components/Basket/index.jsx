@@ -4,8 +4,8 @@ import { Grid, Col, Row } from 'react-flexbox-grid';
 
 import Header from './Header';
 import Details from './Details';
-import Bill from '../components/Bill';
-import Footer from '../components/Footer';
+import Bill from '../Bill';
+import Footer from '../Footer';
 
 const Container = styled.div`
   justify-content: space-around;
